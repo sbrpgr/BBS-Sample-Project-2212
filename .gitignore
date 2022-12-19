@@ -5,6 +5,7 @@ mysql.properties
 *.class
 
 .metadata/
+target/
 bin/
 tmp/
 *.tmp
