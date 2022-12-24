@@ -1,13 +1,8 @@
-SET SESSION FOREIGN_KEY_CHECKS=0;
-
 /* Drop Tables */
 
 DROP TABLE IF EXISTS reply;
 DROP TABLE IF EXISTS board;
 DROP TABLE IF EXISTS users;
-
-
-
 
 /* Create Tables */
 
@@ -28,7 +23,7 @@ CREATE TABLE board
 
 CREATE TABLE reply
 (
-	rid int NOT NULL,
+	rid int NOT NULL AUTO_INCREMENT,
 	content varchar(128) NOT NULL,
 	regDate datetime DEFAULT CURRENT_TIMESTAMP NOT NULL,
 	isMine int DEFAULT 0 NOT NULL,
@@ -44,7 +39,7 @@ CREATE TABLE users
 	pwd char(60) NOT NULL,
 	uname varchar(20) NOT NULL,
 	email varchar(32),
-	regdate date DEFAULT NOW(), SYSDATE(),
+	regDate date DEFAULT (CURRENT_DATE),
 	isDeleted int DEFAULT 0 NOT NULL,
 	PRIMARY KEY (uid)
 );
